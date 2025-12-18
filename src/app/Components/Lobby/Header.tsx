@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect} from "react";
+import {JSX, useEffect} from "react";
 import {motion} from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -10,9 +10,10 @@ import {
     MoveDirection,
     OutMode,
 } from "@tsparticles/engine";
+import Link from "next/link";
 
 
-export function Header() {
+export function Header(): JSX.Element {
 
     let textInColor = " Portfolio!";
     let textArrayInColor = textInColor.split("");
@@ -23,7 +24,7 @@ export function Header() {
 
     return (
 
-        <div className={"w-full h-screen bg-gradient-to-b from-[#050404] to-[#4A1942] content-center"}>
+        <div className={"w-full h-screen content-center"}>
             <div className={"text-appear flex mx-auto justify-center items-center"}>
                 <h1 className={"text-8xl font-bold text-accent"}>Welcome to my
                         {textArrayInColor.map((char, index) => {
@@ -43,14 +44,14 @@ export function Header() {
 
             </div>
             <div className={"flex justify-center items-center mt-10"}>
-                <a href={"#"} className={"text-xl text-accent text-[#050404] flex items-center gap-2 bg-[#EAEAEA] hover:bg-[#b3b3b3] transition-colors px-4 py-2 rounded-lg mr-2.5"}>
+                <Link href={"https://www.linkedin.com/in/thomas-nardou-714b3a2aa/"} className={"text-xl text-accent text-[#050404] flex items-center gap-2 bg-[#EAEAEA] hover:bg-[#b3b3b3] transition-colors px-4 py-2 rounded-lg mr-2.5"}>
                     <FaLinkedin />
                     LinkedIn
-                </a>
-                <a href={"#"} className={"text-xl text-accent flex items-center gap-2 bg-[#893168] px-4 py-2 rounded-lg ml-2.5 hover:bg-[#6A1B4D] transition-colors"}>
+                </Link>
+                <Link href={"https://github.com/ThomNardou"} className={"text-xl text-accent flex items-center gap-2 bg-[#893168] px-4 py-2 rounded-lg ml-2.5 hover:bg-[#6A1B4D] transition-colors"}>
                     <FaGithub />
                     Github
-                </a>
+                </Link>
             </div>
         </div>
     )

@@ -13,8 +13,8 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
+    <html lang="fr" suppressHydrationWarning>
+      <body className="bg-gradient-to-b from-[#050404] to-[#4A1942]">
         {children}
       </body>
     </html>
